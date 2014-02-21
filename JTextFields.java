@@ -53,15 +53,16 @@ public class JTextFields extends JFrame {
 		public void actionPerformed(ActionEvent event){
 			String aleatorio1;
 			String aleatorio2;
-			String aleatorio3;
+			String aleatorio3; //criei campos para receber os valores aleatórios
 			String aleatorio4;
 			
 			if(event.getSource()==gerar)
 			{
-				campo1.setText("Item 1");
+				campo1.setText("Item 1"); 
 				campo2.setText("Item 2");
 				campo3.setText("Item 3");
 				campo4.setText("Item 4");
+				
 			}
 		}
 		
