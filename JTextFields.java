@@ -75,11 +75,7 @@ public class JTextFields extends JFrame {
 			}
 			else if(event.getSource()==mudaTela)
 			{
-				JTextFields2 janela2 = new JTextFields2();
-				janela2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				janela2.setSize(190, 200);
-				janela2.setResizable(false);
-				janela2.setVisible(true);
+			
 			}
 		}
 
