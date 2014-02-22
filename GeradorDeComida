@@ -1,0 +1,84 @@
+import java.util.Random;
+
+public class GeradorDeComida {
+	Random aleatorio = new Random();
+	int numAleatorio1;
+	String aleatorio1;
+	int numAleatorio2;
+	String aleatorio2;
+	int numAleatorio3;
+	String aleatorio3;
+	int numAleatorio4;
+	String aleatorio4;
+
+	public GeradorDeComida(){
+		
+		
+		numAleatorio1 = aleatorio.nextInt(4);//gera numeros entre 0 e n-1 (no caso de 0 a 3)
+		switch(numAleatorio1)
+		{
+		case 0:
+			aleatorio1 = "Batata";
+			break;
+		case 1:
+			aleatorio1 = "Arroz";
+			break;
+		case 2:
+			aleatorio1 = "Arroz integral";
+			break;
+		case 3:
+			aleatorio1 = "Macarrão";
+			break;
+		}
+		numAleatorio2 = aleatorio.nextInt(4);
+		switch(numAleatorio2){
+		case 0:
+			aleatorio2 = "Feijão";
+			break;
+		case 1:
+			aleatorio2 = "Soja";
+			break;
+		case 2:
+			aleatorio2 = "Ervilha";
+			break;
+		case 3:
+			aleatorio2 = "Grão a escolha";
+			break;
+		}
+		
+		numAleatorio3 = aleatorio.nextInt(4);
+		switch(numAleatorio3){
+		case 0:
+			aleatorio3 = "Alface Crespo";
+			break;
+		case 1:
+			aleatorio3 = "Espinafre";
+			break;
+		case 2:
+			aleatorio3 = "Tomate";
+			break;
+		case 3:
+			aleatorio3 = "Pepino";
+			break;
+		}
+		
+		numAleatorio4 = aleatorio.nextInt(4);
+		switch(numAleatorio4){
+		case 0:
+			aleatorio4 = "Frango";
+			break;
+		case 1:
+			aleatorio4 = "Carne Vermelha";
+			break;
+		case 2:
+			aleatorio4 = "Peixe";
+			break;
+		case 3:
+			aleatorio4 = "Carne a escolha";
+			break;
+		}
+		
+		
+	}
+
+}
