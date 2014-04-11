@@ -1,0 +1,133 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package batalha;
+
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class FrameBatalha extends JFrame{
+    protected JPanel barraAcoes = new JPanel();
+    protected JPanel barraBotoes = new JPanel();
+    protected JPanel barraPersonagens = new JPanel();
+    protected JPanel barraPersonagem1 = new JPanel();
+    protected JPanel barraPersonagem2 = new JPanel();
+    protected JPanel barraPersonagem3 = new JPanel();
+    protected JPanel areaBatalha = new JPanel();
+    protected JPanel painel = new JPanel();
+    protected JButton atacar = new JButton("Atacar");
+    protected JButton atirar = new JButton("Atirar");
+    protected JButton fugir = new JButton("Fugir");
+    protected JTable tabela = new JTable();
+    protected ImageIcon icone1 = new ImageIcon(this.getClass().getResource("imagem1.jpg"));
+    protected JLabel iconePersonagem1;
+    protected JLabel iconePersonagem2 = new JLabel(icone1);
+    
+    
+    public FrameBatalha(){
+     
+        super("Batalha teste");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        GridBagLayout layout = new GridBagLayout();
+        this.getContentPane().add(painel);
+        painel.setLayout(layout);
+        
+        //===========
+        GridBagConstraints cons = new GridBagConstraints();
+        GridBagConstraints cPersonagens = new GridBagConstraints();
+        barraPersonagens.setLayout(layout);
+        cPersonagens.gridx=0;
+        cPersonagens.gridy=0;
+        cPersonagens.fill=1;
+        barraPersonagens.add(atacar, cPersonagens);
+        cPersonagens.gridx=0;
+        cPersonagens.gridy=1;
+        barraPersonagens.add(atirar, cPersonagens);
+        cPersonagens.gridx=0;
+        cPersonagens.gridy=2;
+        barraPersonagens.add(fugir, cPersonagens);
+        cPersonagens.gridx=0;
+        cPersonagens.gridy=3;
+        barraPersonagens.add(new JButton("Outro botão"),cPersonagens);
+        barraPersonagens.setBorder(BorderFactory.createLineBorder(Color.black));
+        barraAcoes.add(barraPersonagens);
+        //================
+        
+        barraPersonagem1.setLayout(layout);
+        GridBagConstraints personagem1 = new GridBagConstraints();
+        personagem1.gridx=0;
+        personagem1.gridy=0;
+        iconePersonagem1 = new JLabel(icone1);
+        barraPersonagem1.add(iconePersonagem1, personagem1);
+        personagem1.gridx=0;
+        personagem1.gridy=1;
+        barraPersonagem1.add(new JLabel("Nome"), personagem1);
+        personagem1.gridx=0;
+        personagem1.gridy=2;
+        barraPersonagem1.add(new JLabel("Vida"),personagem1);
+        barraPersonagem1.setBorder(BorderFactory.createLineBorder(Color.black));
+        barraAcoes.add(barraPersonagem1);
+        //================
+        barraPersonagem2.setLayout(layout);
+        GridBagConstraints personagem2 = new GridBagConstraints();
+        personagem2.gridx=0;
+        personagem2.gridy=0;
+        barraPersonagem2.add(iconePersonagem2,personagem2);
+        personagem2.gridx=0;
+        personagem2.gridy=1;
+        barraPersonagem2.add(new JLabel("HP"), personagem2);
+        personagem2.gridx=0;
+        personagem2.gridy=2;
+        barraPersonagem2.add(new JLabel("Vida"), personagem2);
+        barraAcoes.add(barraPersonagem2);
+        //==============
+        barraAcoes.add(new JButton("botao1"));
+        barraAcoes.add(new JButton("botao1"));
+        barraAcoes.add(new JButton("botao1"));
+        barraAcoes.setBorder(BorderFactory.createLineBorder(Color.black));
+        barraAcoes.add(barraBotoes);
+        // fim do tratamento da parte inferior
+        
+        areaBatalha.setBorder(BorderFactory.createBevelBorder(1));
+        
+        cons.gridx = 0;
+        cons.gridy = 0;
+        
+       // cons.fill=1;
+        painel.add(new JScrollPane(tabela), cons);
+        
+        cons.gridx=0;
+        cons.gridy=1;
+        cons.fill=1;
+        painel.add(barraAcoes, cons);
+        
+        //inicio tratamento de eventos
+       
+        atacar.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                botaoAtacar();
+            }
+        });
+    }
+    public void botaoAtacar(){
+        JOptionPane.showMessageDialog(null, iconePersonagem1, null, WIDTH, icone1);
+    }
+
+}
